@@ -1,0 +1,12 @@
+all: iminur1 iminur2
+
+iminur1:
+	yasm -g cv8 -f win64 iminur1.asm
+	# link /debug /subsystem:console /nodefaultlib /entry:_main iminur1.obj
+
+iminur2:
+	yasm -g cv8 -f win64 iminur2.asm
+	# link /debug /subsystem:console /nodefaultlib /entry:_main iminur2.obj kernel32.lib
+
+clean-iminur:
+	rm -f iminur*.obj
