@@ -7,17 +7,12 @@
 * Maybe read a bit more about hardware details (`float`, `SIMD`).
 
 ## Goals
-[ ] Get fluent in reading (not so much in writing).
-
-[ ] Memorize the *precise* effect of instructions.
-
-[ ] Learn about instructions previously unknown.
-
-[ ] Understand differences in register mnemonics (`rax` vs. `eax` etc.).
-
-[ ] Get acquainted with assembler differences (`nasm`/`yasm` vs. `gas`).
-
-[ ] Practice OS concepts (naked `syscall` vs. wrapped access via `kernel32.dll`).
+- [ ] Get fluent in reading (not so much in writing).
+- [ ] Memorize the *precise* effect of instructions.
+- [ ] Learn about instructions previously unknown.
+- [ ] Understand differences in register mnemonics (`rax` vs. `eax` etc.).
+- [ ] Get acquainted with assembler differences (`nasm`/`yasm` vs. `gas`).
+- [ ] Practice OS concepts (naked `syscall` vs. wrapped access via `kernel32.dll`).
 
 ### x86-64
 Start using [nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/) <- contains paragraphs about macOs and Windows, no harm though :)
