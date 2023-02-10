@@ -7,21 +7,37 @@
 * Maybe read a bit more about hardware details (`float`, `SIMD`).
 
 ## Goals
-- [ ] Get fluent in reading (not so much in writing).
-- [ ] Memorize the *precise* effect of instructions.
-- [ ] Learn about instructions previously unknown.
-- [ ] Understand differences in register mnemonics (`rax` vs. `eax` etc.).
+- [x] Get fluent in reading (not so much in writing).
+- [ ] Memorize (or be able to document) the *precise* effect of instructions.
+- [x] Learn about instructions previously unknown and know where to look up new ones.
+- [x] Understand differences in register mnemonics (`rax` vs. `eax` etc.).
 - [ ] Get acquainted with assembler differences (`nasm`/`yasm` vs. `gas`).
 - [ ] Practice OS concepts (naked `syscall` vs. wrapped access via `kernel32.dll`).
+- [ ] Get fluent in `gdb` (using `ugdb`) and `WinDbg` on the way 🤓
 
 ### x86-64
 Start using [nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/) <- contains paragraphs about macOs and Windows, no harm though :)
 
+Instructions: [the best list found so far](http://home.myfairpoint.net/fbkotler/nasmdocc.html) for nasm
+
+More details on [floating point](https://rayseyfarth.com/asm/pdf/ch11-floating-point.pdf) instructions which lend themselves to some exercises. 
+
 ### Arm on Linux
-Continue with `gas` on [AArch64](https://modexp.wordpress.com/2018/10/30/arm64-assembly/) hardware.
+Continue with `gas` on [Arm64](https://modexp.wordpress.com/2018/10/30/arm64-assembly/) hardware.
 
 ### Windows Specifics
-Reference/Tutorial to be spotted for completion of all this.
+Reference/Tutorial to be spotted for completion of all this. Or alternatively look some Windows things up in `nasm`'s manual.
 
 ## Repository Structure
-Divided into subdirectories `intel`, `arm` and `windows`.
+To be pragmatic, directory names for examples and exercises done follow a hierarchy of:
+1. Operating System to build- and (mostly) run on
+2. ISA without microarchitecture details (do we have e.g. `avx2`)
+3. Optional subdirectories focusing on binary aspects, named `codegen`
+
+No further distinction are made, i.e. are we using `libc` or do we build a `pe32` executable.
+
+So far we have:
+- `linux/x86`
+- `windows/x86` (both mostly x86-64)
+- `linux/arm64`
+- `mvs/system_370` (just joking) 
