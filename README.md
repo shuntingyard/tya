@@ -28,6 +28,10 @@ Continue with `gas` on [Arm64](https://modexp.wordpress.com/2018/10/30/arm64-ass
 ### Windows Specifics
 Reference/Tutorial to be spotted for completion of all this. Or alternatively look some Windows things up in `nasm`'s manual.
 
+See this
+[stackoverflow topic](https://stackoverflow.com/questions/64413414/unresolved-external-symbol-printf-in-windows-x64-assembly-programming-with-nasm)
+for details on using so-called legacy stdio (`printf` etc.) in Windows 64-bit programs.
+
 ## Repository Structure
 To be pragmatic, directory names for examples and exercises done follow a hierarchy of:
 1. Operating System to build- and (mostly) run on
@@ -40,4 +44,4 @@ So far we have:
 - `linux/x86`
 - `windows/x86` (both mostly x86-64)
 - `linux/arm64`
-- `mvs/system_370` (just joking) 
+- `mvs/system_370` (just joking)
