@@ -1,7 +1,7 @@
 ; Using WriteFile to output something on Windows.
 ;
 
-        ; default rel   ; TODO: works without on wondows, check if really needed on linux
+        ; default rel   ; TODO: works without on windows, check if really needed on linux
 
         global  point_alpha
         extern  GetStdHandle
@@ -10,7 +10,7 @@
 
         section .text
 
-point_alpha:                                ; unlike libc where we do init and call main
+point_alpha:                                ; unlike libc where we first setup things and then call `main`
 
         mov     rcx, -11                    ; stdout query
         call    GetStdHandle
