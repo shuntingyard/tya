@@ -25,6 +25,8 @@ More details on [floating point](https://rayseyfarth.com/asm/pdf/ch11-floating-p
 ### Arm on Linux
 Continue with `gas` on [Arm64](https://modexp.wordpress.com/2018/10/30/arm64-assembly/) hardware.
 
+A64 doc at [armDeveloper](https://developer.arm.com/documentation/102374/0101)
+
 ### Windows Specifics
 Reference/Tutorial to be spotted for completion of all this. Or alternatively look some Windows things up in `nasm`'s manual.
 

@@ -2,7 +2,7 @@
 #
 
 # a) Simple programs
-simple_pgms = hello 	# triangle
+simple_pgms = hello triangle
 
 # b) Programs using GLIBC environment
 libc_pos_dependent = hello_libc
@@ -17,7 +17,7 @@ C_driven = maxofthree simdfloating factorial
 all: $(simple_pgms)	# $(libc_pos_dependent) $(libc_PIE) $(C_driven)
 
 $(simple_pgms): %: %.s
-	as $< -o $@.out 
+	as $< -g -o $@.out 
 	ld $@.out -o $@
 
 $(libc_pos_dependent): %: %.asm

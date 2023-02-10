@@ -2,7 +2,7 @@
     Writes "Hello, World" to stdout using only system calls. Written for Arch64 Linux.
 
     syscalls cf.
-        https://github.com/torvalds/linux/blob/v4.17/include/uapi/asm-generic/unistd.h
+        https://arm64.syscall.sh/
 */
 	.global _start
 
