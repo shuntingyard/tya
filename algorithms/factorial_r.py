@@ -2,7 +2,8 @@ import sys
 
 
 def factorial(n: int) -> int:
-    """Python < 10 version of match impl;
+    """Python < 10 version, replacing the original match/case implementation.
+    Can do 997!
     """
     if n < 0:
         raise Exception("not defined")

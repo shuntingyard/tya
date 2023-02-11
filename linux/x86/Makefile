@@ -22,16 +22,16 @@ $(simple_pgms): %: %.asm
 	ld $@.o -o $@
 
 $(libc_pos_dependent): %: %.asm
-	nasm -f elf64 $<
-	gcc -no-pie $@.o -o $@
+	yasm -f elf64 -g dwarf2 $<
+	gcc -no-pie -g $@.o -o $@
 
 $(libc_PIE): %: %.asm
-	nasm -f elf64 $<
-	gcc $@.o -o $@
+	yasm -f elf64 -g dwarf2 $<
+	gcc -g $@.o -o $@
 
 $(C_driven): %: %.asm %.c
-	nasm -f elf64 $(word 1,$^)
-	gcc $(word 2,$^) $@.o -o $@
+	yasm -f elf64 -g dwarf2 $(word 1,$^)
+	gcc $(word 2,$^) -g $@.o -o $@
 
 clean:
 	rm -f $(wildcard *.o) $(simple_pgms) $(libc_pos_dependent) $(libc_PIE) $(C_driven)
