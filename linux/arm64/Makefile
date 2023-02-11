@@ -5,32 +5,27 @@
 simple_pgms = hello triangle
 
 # b) Programs using GLIBC environment
-libc_pos_dependent = hello_libc
-libc_PIE = hello_libc_pie fib echocmdl average
+libc_PIE = hello_libc
 
 # c) Module with C program as driver
 # 	should follow convention: <filename>.asm (functions) <filename>.c (driver)
-C_driven = maxofthree simdfloating factorial
+C_driven = factorial # simd128
 
 .PHONY: clean
 
-all: $(simple_pgms)	# $(libc_pos_dependent) $(libc_PIE) $(C_driven)
+all: $(simple_pgms) $(C_driven)	$(libc_PIE)
 
 $(simple_pgms): %: %.s
 	as $< -g -o $@.out 
 	ld $@.out -o $@
 
-$(libc_pos_dependent): %: %.asm
-	nasm -f elf64 $<
-	gcc -no-pie $@.o -o $@
+$(libc_PIE): %: %.s
+	as $< -g -o $@.out 
+	gcc -g $@.out -o $@
 
-$(libc_PIE): %: %.asm
-	nasm -f elf64 $<
-	gcc $@.o -o $@
-
-$(C_driven): %: %.asm %.c
-	nasm -f elf64 $(word 1,$^)
-	gcc $(word 2,$^) $@.o -o $@
+$(C_driven): %: %.s %.c
+	as $(word 1,$^) -g -o $@.out
+	gcc $(word 2,$^) -g $@.out -o $@
 
 clean:
-	rm -f $(wildcard *.out) $(simple_pgms) $(libc_pos_dependent) $(libc_PIE) $(C_driven)
+	rm -f $(wildcard *.out) $(simple_pgms) $(libc_PIE) $(C_driven)

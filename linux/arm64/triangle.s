@@ -1,6 +1,6 @@
 /*
     This is a Linux console program that writes a little triangle of asterisks to standard.
-*/
+ */
             .global _start
 
             .text

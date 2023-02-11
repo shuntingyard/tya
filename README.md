@@ -12,7 +12,7 @@
 - [x] Learn about instructions previously unknown and know where to look up new ones.
 - [x] Understand differences in register mnemonics (`rax` vs. `eax` etc.).
 - [ ] Get acquainted with assembler differences (`nasm`/`yasm` vs. `gas`).
-- [ ] Practice OS concepts (naked `syscall` vs. wrapped access via `kernel32.dll`).
+- [x] Practice OS concepts (naked `syscall` vs. wrapped access via `kernel32.dll`).
 - [ ] Get fluent in `gdb` (using `ugdb`) and `WinDbg` on the way 🤓
 
 ### x86-64
@@ -20,17 +20,17 @@ Start using [nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/).
 
 x86 and amd64 [instruction reference](https://www.felixcloutier.com/x86/)
 
-More `nasm`-centric: [from its old manual](http://home.myfairpoint.net/fbkotler/nasmdocc.html)
+Instructions in a more `nasm`-centric way: [from nasm's  old manual](http://home.myfairpoint.net/fbkotler/nasmdocc.html)
 
 More details on [floating point](https://rayseyfarth.com/asm/pdf/ch11-floating-point.pdf) instructions which lend themselves to more exercises. 
 
 ### Arm on Linux
 Continue with `gas` on [Arm64](https://modexp.wordpress.com/2018/10/30/arm64-assembly/) hardware.
 
-A64 (one of the 3 ISAs in AArch64, aka Arm64) doc at [armDeveloper](https://developer.arm.com/documentation/102374/0101)
+A64 (one of the three ISAs in AArch64, aka Arm64) doc at [arm Developer](https://developer.arm.com/documentation/102374/0101)
 
 ### Windows Specifics
-Reference/Tutorial to be spotted for completion of all this. Or alternatively look some Windows things up in `nasm`'s manual.
+Reference/Tutorial to be spotted for completion of all this.
 
 See this
 [stackoverflow topic](https://stackoverflow.com/questions/64413414/unresolved-external-symbol-printf-in-windows-x64-assembly-programming-with-nasm)
@@ -53,4 +53,11 @@ So far we have:
 ## Appendix A - Notes
 
 ### Source Code in GDB
-While all works fine with `gas` (e.g. 2.35.2) there seems to be a [bug](https://stackoverflow.com/questions/72694342/gdb-does-not-load-source-lines-from-nasm) in `NASM version 2.15.05`. Currently it's easy to work around this using `yasm`.
+While all works fine with `gas` (e.g. in version 2.35.2) there seems to be a [bug](https://stackoverflow.com/questions/72694342/gdb-does-not-load-source-lines-from-nasm) in `NASM version 2.15.05`. Currently it's easy to work around this using `yasm`.
+
+### Generate Assembly
+Sometimes it can be interesting to inspect assembly generated from `C` code. To do so just run
+```bash
+gcc -Os -S <input>.c
+```
+and have a look at the generated `<input>.s` thus optimized for size.

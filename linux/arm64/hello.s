@@ -3,7 +3,7 @@
 
     syscalls cf.
         https://arm64.syscall.sh/
-*/
+ */
 	.global _start
 
         .text
