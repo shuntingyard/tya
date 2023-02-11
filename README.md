@@ -10,10 +10,11 @@
 - [x] Get fluent in reading (not so much in writing).
 - [x] Memorize (or be able to document) the *precise* effect of instructions.
 - [x] Learn about instructions previously unknown and know where to look up new ones.
-- [x] Understand differences in register mnemonics (`rax` vs. `eax` etc.).
+- [x] Understand register mnemonics (`rax` vs. `eax`, `Xn` vs. `Wn`, `SP` etc.).
 - [ ] Get acquainted with assembler differences (`nasm`/`yasm` vs. `gas`).
 - [x] Practice OS concepts (naked `syscall` vs. wrapped access via `kernel32.dll`).
 - [ ] Get fluent in `gdb` (using `ugdb`) and `WinDbg` on the way 🤓
+- [ ] Find out if there is a Microsoft equivalent for `gcc -Os -S file.c`
 
 ### x86-64
 Start using [nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/).
@@ -58,6 +59,6 @@ While all works fine with `gas` (e.g. in version 2.35.2) there seems to be a [bu
 ### Generate Assembly
 Sometimes it can be interesting to inspect assembly generated from `C` code. To do so just run
 ```bash
-gcc -Os -S <input>.c
+gcc -Os -S file.c
 ```
-and have a look at the generated `<input>.s` thus optimized for size.
+and have a look at the generated `file.s` thus optimized for size.
