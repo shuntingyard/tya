@@ -17,7 +17,8 @@ C_driven = maxofthree simdfloating factorial
 all: $(simple_pgms) $(libc_pos_dependent) $(libc_PIE) $(C_driven)
 
 $(simple_pgms): %: %.asm
-	nasm -f elf64 $<
+	# Show source in gdb (broken in NASM version 2.15.05).
+	yasm -f elf64 -g dwarf2 $<
 	ld $@.o -o $@
 
 $(libc_pos_dependent): %: %.asm

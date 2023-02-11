@@ -4,12 +4,12 @@
 
           section   .text
 
-_start    mov       rdx, output         ; TODO: check with gdb. I think output's address goes to r0 here.
+_start    mov       rdx, output         ; output's address goes to r2 here
           mov       r8, 1               ; start with output length 1 (r8 will be checked below)
           mov       r9, 0               ; number of asterisks on line so far
 
 line:
-          mov       byte [rdx], '*'     ; TODO; gdb check
+          mov       byte [rdx], '*'
           inc       rdx
           inc       r9
           cmp       r8, r9

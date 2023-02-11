@@ -8,7 +8,7 @@
 
 ## Goals
 - [x] Get fluent in reading (not so much in writing).
-- [ ] Memorize (or be able to document) the *precise* effect of instructions.
+- [x] Memorize (or be able to document) the *precise* effect of instructions.
 - [x] Learn about instructions previously unknown and know where to look up new ones.
 - [x] Understand differences in register mnemonics (`rax` vs. `eax` etc.).
 - [ ] Get acquainted with assembler differences (`nasm`/`yasm` vs. `gas`).
@@ -16,16 +16,18 @@
 - [ ] Get fluent in `gdb` (using `ugdb`) and `WinDbg` on the way 🤓
 
 ### x86-64
-Start using [nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/) <- contains paragraphs about macOs and Windows, no harm though :)
+Start using [nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/).
 
-Instructions: [the best list found so far](http://home.myfairpoint.net/fbkotler/nasmdocc.html) for nasm
+x86 and amd64 [instruction reference](https://www.felixcloutier.com/x86/)
 
-More details on [floating point](https://rayseyfarth.com/asm/pdf/ch11-floating-point.pdf) instructions which lend themselves to some exercises. 
+More `nasm`-centric: [from its old manual](http://home.myfairpoint.net/fbkotler/nasmdocc.html)
+
+More details on [floating point](https://rayseyfarth.com/asm/pdf/ch11-floating-point.pdf) instructions which lend themselves to more exercises. 
 
 ### Arm on Linux
 Continue with `gas` on [Arm64](https://modexp.wordpress.com/2018/10/30/arm64-assembly/) hardware.
 
-A64 doc at [armDeveloper](https://developer.arm.com/documentation/102374/0101)
+A64 (one of the 3 ISAs in AArch64, aka Arm64) doc at [armDeveloper](https://developer.arm.com/documentation/102374/0101)
 
 ### Windows Specifics
 Reference/Tutorial to be spotted for completion of all this. Or alternatively look some Windows things up in `nasm`'s manual.
@@ -35,7 +37,7 @@ See this
 for details on using so-called legacy stdio (`printf` etc.) in Windows 64-bit programs.
 
 ## Repository Structure
-To be pragmatic, directory names for examples and exercises done follow a hierarchy of:
+To be pragmatic, directory names for examples and exercises follow a hierarchy of:
 1. Operating System to build- and (mostly) run on
 2. ISA without microarchitecture details (do we have e.g. `avx2`)
 3. Optional subdirectories focusing on binary aspects, named `codegen`
@@ -46,4 +48,9 @@ So far we have:
 - `linux/x86`
 - `windows/x86` (both mostly x86-64)
 - `linux/arm64`
-- `mvs/system_370` (just joking)
+- `mvs/system_370` (Just joking, but remember: `gdb` exists for System/370 😱)
+
+## Appendix A - Notes
+
+### Source Code in GDB
+While all works fine with `gas` (e.g. 2.35.2) there seems to be a [bug](https://stackoverflow.com/questions/72694342/gdb-does-not-load-source-lines-from-nasm) in `NASM version 2.15.05`. Currently it's easy to work around this using `yasm`.

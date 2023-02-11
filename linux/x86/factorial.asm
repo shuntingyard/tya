@@ -1,11 +1,10 @@
+;
 ; An implementation of the recursive function:
 ;
 ;   uint64_t factorial(uint64_t n) {
 ;       return (n <= 1) ? 1 : n * factorial(n-1);
 ;   }
 ;
-
-                                        ; TODO: study recursion details
         global  factorial
 
         section .text
@@ -13,7 +12,7 @@
 factorial:
 
         cmp     rdi, 1                  ; n <= 1?
-        jnbe    L1                      ; if not, go do a recursive call
+        jnbe    L1                      ; op code 77: jump short if not below or equal (CF=0 and ZF=0)
         mov     rax, 1                  ; otherwise return 1
         ret
 L1:
