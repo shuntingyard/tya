@@ -53,7 +53,7 @@ So far we have:
 
 ## Appendix A - Notes
 
-### Source Code in GDB
+### View Source Code in GDB
 While all works fine with `gas` (e.g. in version 2.35.2) there seems to be a [bug](https://stackoverflow.com/questions/72694342/gdb-does-not-load-source-lines-from-nasm) in `NASM version 2.15.05`. Currently it's easy to work around this using `yasm`.
 
 ### Generate Assembly

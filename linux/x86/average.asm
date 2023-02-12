@@ -30,8 +30,8 @@ accumulate:
 
 average:
 
-        cvtsi2sd xmm0, [rel sum]        ; TODO: study these 3 instructions
-        cvtsi2sd xmm1, [rel count]
+        cvtsi2sd xmm0, dword [rel sum]  ; yasm is a bit more strict and requires `dword` to be specified
+        cvtsi2sd xmm1, dword [rel count]
         divsd    xmm0, xmm1             ; xmm0 is sum/count
         lea      rdi, [rel format]      ; 1st arg to printf
         mov      rax, 1                 ; printf is varargs, there is 1 non-int argument
@@ -55,8 +55,8 @@ nothingToAverage:
 
         section  .data
 
-count:  dq       0
-sum:    dq       0
+count:  dw       0
+sum:    dw       0
 
 format: db       "%g", 10, 0
 error:  db       "There are no command line arguments to average", 10, 0
