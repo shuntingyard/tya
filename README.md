@@ -14,7 +14,7 @@
 - [ ] Get acquainted with assembler differences (`nasm`/`yasm` vs. `gas`).
 - [x] Practice OS concepts (naked `syscall` vs. wrapped access via `kernel32.dll`).
 - [ ] Get fluent in `gdb` (using `ugdb`) and `WinDbg` on the way 🤓
-- [ ] Find out if there is a Microsoft equivalent for `gcc -Os -S file.c`
+- [x] Find out if there is a Microsoft equivalent for `gcc -Os -S file.c`
 
 ### x86-64
 Start using [nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/).
@@ -56,9 +56,25 @@ So far we have:
 ### View Source Code in GDB
 While all works fine with `gas` (e.g. in version 2.35.2) there seems to be a [bug](https://stackoverflow.com/questions/72694342/gdb-does-not-load-source-lines-from-nasm) in `NASM version 2.15.05`. Currently it's easy to work around this using `yasm`.
 
+### Using WinDbg
+- Rosetta pebble: [WinDbg for GDB users](https://github.com/wangray/WinDBG-for-GDB-users)
+- And inverse [here](https://blog.mattjustice.com/2018/08/24/gdb-for-windbg-users/)
+- [Get started with WinDbg (user mode)](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/getting-started-with-windbg) by Microsoft
+- A somewhat longer [cheat sheet](https://sites.google.com/site/taesaza0/etc/windbgcheatsheet) at Google Sites
+
 ### Generate Assembly
 Sometimes it can be interesting to inspect assembly generated from `C` code. To do so just run
 ```bash
 gcc -Os -S file.c
 ```
 and have a look at the generated `file.s` thus optimized for size.
+
+The MSVC equivalent of this is
+```ps
+cl /O1 /FAs .\file.c
+```
+to generate `file.asm` and
+```ps
+cl /O1 /FAc .\file.c
+```
+to directly obtain machine code (`file.cod`) respectively.
