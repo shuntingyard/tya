@@ -1,5 +1,5 @@
 /*
-    Writes "Hello, World" to stdout using only system calls. Written for Arch64 Linux.
+    Writes "Hello, World" to stdout using only system calls. Written for Arm64 Linux.
 
     syscalls cf.
         https://arm64.syscall.sh/
@@ -16,9 +16,10 @@ _start:
         svc    0
 
         mov    x8, 93           // syscall for exit
+        eor    x0, x0, x0       // rc (practice using exclusive or for a change)
         svc    0
 
         .data
 
-hello_txt: .ascii "Hello, World!\n"
+hello_txt: .ascii "Hello, World\n"
 hello_len = . - hello_txt

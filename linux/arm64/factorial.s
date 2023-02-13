@@ -16,7 +16,7 @@ factorial:
 .LOOP:
         cbz     x1, .RET                // n < 1?
         mul     x0, x0, x1              // n * (n - 1) * (n - 2) ...
-        sub x1, x1, 1                   // decrement n
+        sub     x1, x1, 1               // decrement n
         b       .LOOP
 .RET:
         ret

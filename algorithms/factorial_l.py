@@ -7,11 +7,11 @@ def factorial(n: int) -> int:
     """
     m = n
     n = 1
-    while True:
-        if m < 1:
-            return n
+    while m < 0:
         n = n * m
         m -= 1
+
+    return n
 
 
 if __name__ == "__main__":
