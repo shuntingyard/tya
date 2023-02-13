@@ -25,7 +25,7 @@ lineDone:
             add     w8, w8, 1           // output line gets 1 longer
             mov     w9, 0
             cmp     w8, maxlines
-            bne     line
+            ble     line
 
 done:
             mov     x8, 64              // syscall for write
