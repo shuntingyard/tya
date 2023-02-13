@@ -14,7 +14,6 @@
 - [ ] Get acquainted with assembler differences (`nasm`/`yasm` vs. `gas`).
 - [x] Practice OS concepts (naked `syscall` vs. wrapped access via `kernel32.dll`).
 - [ ] Get fluent in `gdb` (using `ugdb`) and `WinDbg` on the way 🤓
-- [x] Find out if there is a Microsoft equivalent for `gcc -Os -S file.c`
 
 ### x86-64
 Start using [nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/).
@@ -40,7 +39,7 @@ for details on using so-called legacy stdio (`printf` etc.) in Windows 64-bit pr
 ## Repository Structure
 To be pragmatic, directory names for examples and exercises follow a hierarchy of:
 1. Operating System to build- and (mostly) run on
-2. ISA without microarchitecture details (do we have e.g. `avx2`)
+2. ISA without microarchitecture details (e.g. is `avx2` available?)
 3. Optional subdirectories focusing on binary aspects, named `codegen`
 
 No further distinction are made, i.e. are we using `libc` or do we build a `pe32` executable.
@@ -71,10 +70,11 @@ and have a look at the generated `file.s` thus optimized for size.
 
 The MSVC equivalent of this is
 ```ps
-cl /O1 /FAs .\file.c
+cl /O1 /FAs /c .\file.c
 ```
 to generate `file.asm` and
 ```ps
-cl /O1 /FAc .\file.c
+cl /O1 /FAc /c 
+.\file.c
 ```
 to directly obtain machine code (`file.cod`) respectively.

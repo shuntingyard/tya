@@ -38,6 +38,6 @@ done:
 
             .data
 
-            .equ    maxlines, 8         // EQU defines a symbol to a given constant value. (nasm manual)
+            .equ    maxlines, 8         // .equ: gas intruction 
             .equ    dataSize, 44        // contains sum(1..maxlines) + maxlines, e.g. 36 + 8
 output:     .space  dataSize, ' '       // .space n[, fill]: reserve n bytes

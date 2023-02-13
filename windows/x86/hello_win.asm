@@ -3,14 +3,14 @@
 
         ; default rel   ; TODO: works without on windows, check if really needed on linux
 
-        global  point_alpha
+        global  my_entry
         extern  GetStdHandle
         extern  WriteFile
         extern  ExitProcess
 
         section .text
 
-point_alpha:                                ; unlike libc where we first setup things and then call `main`
+my_entry:                                   ; doesn't have to be called `main` in Windows envs
 
         mov     rcx, -11                    ; stdout query
         call    GetStdHandle
