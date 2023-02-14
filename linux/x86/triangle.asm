@@ -21,7 +21,7 @@ lineDone:
           inc       r8                  ; output line gets 1 longer
           mov       r9, 0
           cmp       r8, maxlines
-          jne       line
+          jle       line
 
 done:                                   ; write to stdout and exit
           mov       rax, 1
