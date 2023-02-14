@@ -80,4 +80,4 @@ cl /O1 /FAc /c
 to directly obtain machine code (`file.cod`) respectively.
 
 ### Passing Arguments Upon Program Start
-While calling conventions specify how to pass arguments to `main (int, address)`, this turns out to be surprisingly difficult to hack when completely on your own.
+While calling conventions specify how to pass arguments to `main (int, address)`, achieving the same when completely on your own turns out to be surprisingly difficult.
