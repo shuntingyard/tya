@@ -13,7 +13,7 @@
 - [x] Understand register mnemonics (`rax` vs. `eax`, `Xn` vs. `Wn`, `SP` etc.).
 - [ ] Get acquainted with assembler differences (`nasm`/`yasm` vs. `gas`).
 - [x] Practice OS concepts (naked `syscall` vs. wrapped access via `kernel32.dll`).
-- [x] Get fluent in `gdb` (using `ugdb`) and `WinDbg` on the way 🤓
+- [x] Get fluent in `GDB` (using `ugdb`) and `WinDbg` on the way 🤓
 
 ### x86-64
 Start using [nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/).
@@ -48,14 +48,14 @@ So far we have:
 - `linux/x86`
 - `windows/x86` (both mostly x86-64)
 - `linux/arm64`
-- `mvs/system_370` (Just joking, but remember: `gdb` exists for System/370 😱)
+- `mvs/system_370` (Just joking, but remember: `GDB` exists for System/370 😱)
 
 ## Appendix A - Notes
 
-### View Source Code In Gdb
+### View Source Code In GDB
 While all works fine with `gas` (e.g. in version 2.35.2) there seems to be a [bug](https://stackoverflow.com/questions/72694342/gdb-does-not-load-source-lines-from-nasm) in `NASM version 2.15.05`. Currently it's easy to work around this using `yasm`.
 
-### Using Windbg
+### Using WinDbg
 - Rosetta pebble: [WinDbg for GDB users](https://github.com/wangray/WinDBG-for-GDB-users)
 - And inverse [here](https://blog.mattjustice.com/2018/08/24/gdb-for-windbg-users/)
 - [Get started with WinDbg (user mode)](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/getting-started-with-windbg) by Microsoft
