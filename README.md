@@ -13,7 +13,7 @@
 - [x] Understand register mnemonics (`rax` vs. `eax`, `Xn` vs. `Wn`, `SP` etc.).
 - [ ] Get acquainted with assembler differences (`nasm`/`yasm` vs. `gas`).
 - [x] Practice OS concepts (naked `syscall` vs. wrapped access via `kernel32.dll`).
-- [ ] Get fluent in `gdb` (using `ugdb`) and `WinDbg` on the way 🤓
+- [x] Get fluent in `gdb` (using `ugdb`) and `WinDbg` on the way 🤓
 
 ### x86-64
 Start using [nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/).
@@ -24,7 +24,7 @@ Instructions in a more `nasm`-centric way: [from nasm's  old manual](http://home
 
 More details on [floating point](https://rayseyfarth.com/asm/pdf/ch11-floating-point.pdf) instructions which lend themselves to more exercises. 
 
-### Arm on Linux
+### Arm On Linux
 Continue with `gas` on [Arm64](https://modexp.wordpress.com/2018/10/30/arm64-assembly/) hardware.
 
 A64 (one of the three ISAs in AArch64, aka Arm64) doc at [arm Developer](https://developer.arm.com/documentation/102374/0101)
@@ -52,10 +52,10 @@ So far we have:
 
 ## Appendix A - Notes
 
-### View Source Code in GDB
+### View Source Code In Gdb
 While all works fine with `gas` (e.g. in version 2.35.2) there seems to be a [bug](https://stackoverflow.com/questions/72694342/gdb-does-not-load-source-lines-from-nasm) in `NASM version 2.15.05`. Currently it's easy to work around this using `yasm`.
 
-### Using WinDbg
+### Using Windbg
 - Rosetta pebble: [WinDbg for GDB users](https://github.com/wangray/WinDBG-for-GDB-users)
 - And inverse [here](https://blog.mattjustice.com/2018/08/24/gdb-for-windbg-users/)
 - [Get started with WinDbg (user mode)](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/getting-started-with-windbg) by Microsoft
@@ -78,3 +78,6 @@ cl /O1 /FAc /c
 .\file.c
 ```
 to directly obtain machine code (`file.cod`) respectively.
+
+### Passing Arguments Upon Program Start
+While calling conventions specify how passing arguments to `main (int, address)` (or similar) works, this turns out to be surprisingly difficult to hack when completely on your own.

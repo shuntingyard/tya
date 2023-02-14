@@ -1,7 +1,11 @@
-# The best I achieved with  MSVC's `nmake` without investing time ¯\_(ツ)_/¯
+# Reasonable achievement using MSVC's `nmake` without investing much time ¯\_(ツ)_/¯
+#
 
-kern_linked = hello_win triangle echocmdl
+# a) Simple programs
+kern_linked = hello_win triangle
 
+# b) Module with C program as driver
+#   should follow convention: <filename>.asm <filename>_driver.c
 C_driven = factorial
 
 all: $(kern_linked) $(C_driven)
