@@ -74,8 +74,7 @@ cl /O1 /FAs /c .\file.c
 ```
 to generate `file.asm` and
 ```ps
-cl /O1 /FAc /c 
-.\file.c
+cl /O1 /FAc /c .\file.c
 ```
 to directly obtain machine code (`file.cod`) respectively.
 
